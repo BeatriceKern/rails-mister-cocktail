@@ -1,6 +1,6 @@
-<div class="d-flex flex-wrap">
+<div class="d-flex flex-wrap mt-5">
   <% @cocktails.each do |cocktail| %>
-    <div class="card-category mt-3 mx-auto" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=cocktail.url%>%)">
+    <div class="card-category mt-3 mx-auto" style="background-image: url('<%= cl_image_path cocktail.photo.key, crop: :fill %>') ">
       <%=link_to cocktail.name, cocktail_path(cocktail) %>
     </div>
   <% end %>
